@@ -1,0 +1,17 @@
+{
+  "name": "panda-switch",
+  "version": "1.0.0",
+  "description": "PANDA Switch Cyberpunk GPS Tool",
+  "main": "server/bridge.js",
+  "scripts": {
+    "start": "node server/bridge.js",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

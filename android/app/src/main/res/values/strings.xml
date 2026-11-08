@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PANDA Switch</string>
+    <string name="title_activity_main">PANDA Switch</string>
+    <string name="package_name">com.panda.gpsswitch</string>
+    <string name="custom_url_scheme">com.panda.gpsswitch</string>
+</resources>
