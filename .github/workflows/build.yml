@@ -15,10 +15,22 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build APK with Gradle
+      - name: Install Android SDK and Build Tools
+        uses: android-actions/setup-android@v2
+
+      - name: Create Gradle Wrapper
+        run: |
+          gradle wrapper --gradle-version 8.0 || mvn -N io.takari:maven:wrapper
+          chmod +x gradlew || true
+
+      - name: Build APK
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
-          gradle assembleDebug
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleDebug
+          else
+            gradle assembleDebug
+          fi
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v3
